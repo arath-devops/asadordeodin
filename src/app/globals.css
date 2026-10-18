@@ -1,0 +1,219 @@
+@import "tailwindcss";
+
+:root {
+  --ember: #e85d04;
+  --ember-bright: #ff7a1a;
+  --ember-deep: #c2410c;
+  --gold: #d4a84b;
+  --gold-soft: #e8c97a;
+  --char: #0c0a09;
+  --char-elevated: #171311;
+  --smoke: #2a211c;
+  --ash: #c4b5a5;
+  --cream: #f3e9d8;
+  --background: var(--char);
+  --foreground: var(--cream);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-ember: var(--ember);
+  --color-ember-bright: var(--ember-bright);
+  --color-ember-deep: var(--ember-deep);
+  --color-gold: var(--gold);
+  --color-gold-soft: var(--gold-soft);
+  --color-char: var(--char);
+  --color-char-elevated: var(--char-elevated);
+  --color-smoke: var(--smoke);
+  --color-ash: var(--ash);
+  --color-cream: var(--cream);
+  --font-display: var(--font-cinzel);
+  --font-body: var(--font-source);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-body), Georgia, serif;
+}
+
+::selection {
+  background: color-mix(in srgb, var(--ember) 55%, transparent);
+  color: var(--cream);
+}
+
+.texture-char {
+  background-color: var(--char);
+  background-image:
+    radial-gradient(ellipse 80% 50% at 50% -10%, rgba(232, 93, 4, 0.22), transparent 55%),
+    radial-gradient(ellipse 60% 40% at 90% 20%, rgba(212, 168, 75, 0.08), transparent 50%),
+    radial-gradient(ellipse 50% 35% at 10% 80%, rgba(194, 65, 12, 0.12), transparent 45%),
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.045'/%3E%3C/svg%3E");
+}
+
+.gold-rule {
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    color-mix(in srgb, var(--gold) 70%, transparent),
+    transparent
+  );
+}
+
+.btn-ember {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.85rem 1.4rem;
+  border-radius: 0.2rem;
+  background: linear-gradient(180deg, var(--ember-bright), var(--ember-deep));
+  color: #140a04;
+  font-family: var(--font-display), serif;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  font-size: 0.82rem;
+  box-shadow:
+    0 0 0 1px color-mix(in srgb, var(--gold) 35%, transparent),
+    0 10px 28px rgba(232, 93, 4, 0.28);
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    filter 0.25s ease;
+}
+
+.btn-ember:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.06);
+  box-shadow:
+    0 0 0 1px color-mix(in srgb, var(--gold) 55%, transparent),
+    0 14px 36px rgba(232, 93, 4, 0.4);
+}
+
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.85rem 1.4rem;
+  border-radius: 0.2rem;
+  border: 1px solid color-mix(in srgb, var(--gold) 45%, transparent);
+  color: var(--gold-soft);
+  font-family: var(--font-display), serif;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  font-size: 0.82rem;
+  background: color-mix(in srgb, var(--char) 55%, transparent);
+  backdrop-filter: blur(6px);
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease,
+    color 0.25s ease,
+    background 0.25s ease;
+}
+
+.btn-ghost:hover {
+  transform: translateY(-2px);
+  border-color: var(--gold);
+  color: var(--cream);
+  background: color-mix(in srgb, var(--smoke) 70%, transparent);
+}
+
+@keyframes ember-pulse {
+  0%,
+  100% {
+    box-shadow:
+      0 0 0 0 rgba(232, 93, 4, 0.45),
+      0 8px 24px rgba(232, 93, 4, 0.35);
+  }
+  50% {
+    box-shadow:
+      0 0 0 10px rgba(232, 93, 4, 0),
+      0 8px 28px rgba(232, 93, 4, 0.5);
+  }
+}
+
+@keyframes rise-in {
+  from {
+    opacity: 0;
+    transform: translateY(1.25rem);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes logo-glow {
+  0%,
+  100% {
+    filter: drop-shadow(0 0 12px rgba(232, 93, 4, 0.35));
+  }
+  50% {
+    filter: drop-shadow(0 0 22px rgba(255, 122, 26, 0.55));
+  }
+}
+
+@keyframes flame-drift {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+    opacity: 0.55;
+  }
+  50% {
+    transform: translate3d(2%, -3%, 0) scale(1.05);
+    opacity: 0.8;
+  }
+}
+
+.animate-rise {
+  animation: rise-in 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.animate-rise-delay-1 {
+  animation: rise-in 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.12s both;
+}
+
+.animate-rise-delay-2 {
+  animation: rise-in 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.24s both;
+}
+
+.animate-rise-delay-3 {
+  animation: rise-in 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.36s both;
+}
+
+.animate-logo-glow {
+  animation: logo-glow 4s ease-in-out infinite;
+}
+
+.animate-ember-pulse {
+  animation: ember-pulse 2.4s ease-in-out infinite;
+}
+
+.animate-flame {
+  animation: flame-drift 8s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .animate-rise,
+  .animate-rise-delay-1,
+  .animate-rise-delay-2,
+  .animate-rise-delay-3,
+  .animate-logo-glow,
+  .animate-ember-pulse,
+  .animate-flame {
+    animation: none !important;
+  }
+}
