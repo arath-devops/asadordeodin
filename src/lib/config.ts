@@ -16,6 +16,22 @@ export function whatsappHref(message = WHATSAPP_PREFILL) {
 export const FACEBOOK_URL =
   "https://www.facebook.com/share/196A7LuKUe/?mibextid=wwXIfr";
 
+/** Crédito web del autor (NO es el WhatsApp de la taquería). */
+export const WEB_CREDIT_NAME = "ArathGGM";
+export const WEB_CREDIT_WHATSAPP = "525567667540";
+export const WEB_CREDIT_PREFILL = "Hola, quiero cotizar una página web";
+/**
+ * Estilo del crédito en el footer:
+ * - 'discreet' → “Sitio por ArathGGM” (solo el nombre es link)
+ * - 'soft'     → “¿Quieres una página así? Cotiza con ArathGGM”
+ * Temporalmente dejamos 'soft' (versión B) para que Arath compare.
+ */
+export const WEB_CREDIT_STYLE: "soft" | "discreet" = "soft";
+
+export function webCreditHref() {
+  return `https://wa.me/${WEB_CREDIT_WHATSAPP}?text=${encodeURIComponent(WEB_CREDIT_PREFILL)}`;
+}
+
 export const SITE = {
   name: "El Asador de Odin",
   tagline: "Hornería artesanal",

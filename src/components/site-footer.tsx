@@ -1,4 +1,11 @@
-import { FACEBOOK_URL, SITE, whatsappHref } from "@/lib/config";
+import {
+  FACEBOOK_URL,
+  SITE,
+  WEB_CREDIT_NAME,
+  WEB_CREDIT_STYLE,
+  webCreditHref,
+  whatsappHref,
+} from "@/lib/config";
 
 export function SiteFooter() {
   return (
@@ -30,11 +37,38 @@ export function SiteFooter() {
             </a>
           </div>
         </div>
-        <p className="text-xs text-ash/70">
-          © 2026 {SITE.name}. Chalco, Edomex.
-        </p>
+        <div className="space-y-1.5 text-xs text-ash/70 md:text-right">
+          <p>© 2026 {SITE.name}. Chalco, Edomex.</p>
+          <WebCredit />
+        </div>
       </div>
     </footer>
+  );
+}
+
+function WebCredit() {
+  const href = webCreditHref();
+  const linkClass =
+    "text-gold/80 underline decoration-gold/30 underline-offset-2 transition-colors hover:text-gold-soft";
+
+  if (WEB_CREDIT_STYLE === "discreet") {
+    return (
+      <p>
+        Sitio por{" "}
+        <a href={href} target="_blank" rel="noopener noreferrer" className={linkClass}>
+          {WEB_CREDIT_NAME}
+        </a>
+      </p>
+    );
+  }
+
+  // soft — versión B (venta suave)
+  return (
+    <p>
+      <a href={href} target="_blank" rel="noopener noreferrer" className={linkClass}>
+        ¿Quieres una página así? Cotiza con {WEB_CREDIT_NAME}
+      </a>
+    </p>
   );
 }
 
