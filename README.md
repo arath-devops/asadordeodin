@@ -23,7 +23,31 @@ Abre [http://127.0.0.1:4317](http://127.0.0.1:4317).
 
 Número real: **+52 56 5781 5353** → `wa.me/525657815353`
 
-Configurable con `NEXT_PUBLIC_WHATSAPP_NUMBER` o en `src/lib/config.ts`.
+Variable de entorno (local y Vercel):
+
+```bash
+NEXT_PUBLIC_WHATSAPP_NUMBER=525657815353
+```
+
+También documentada en `.env.example`. Fallback en `src/lib/config.ts`.
+
+## Publicar en Vercel (Hobby gratis)
+
+1. Crear un **repo GitHub real** (este Project empezó como repo temporal).
+2. Crear cuenta en [vercel.com](https://vercel.com) (login con GitHub).
+3. **Add New Project** → importar el repo → Framework: Next.js (auto).
+4. En **Environment Variables** añadir:
+   - `NEXT_PUBLIC_WHATSAPP_NUMBER` = `525657815353`
+5. Deploy → URL pública `*.vercel.app`.
+
+Pasos detallados y blockers: ver contexto del Project en `docs/publicacion.md`.
+
+Verificación local de producción:
+
+```bash
+npm run build
+npm run start -- --port 4317
+```
 
 ## Sucursales
 

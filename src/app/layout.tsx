@@ -15,7 +15,12 @@ const sourceSans = Source_Sans_3({
   weight: ["400", "500", "600", "700"],
 });
 
+const siteUrl = process.env.VERCEL_URL
+  ? `https://${process.env.VERCEL_URL}`
+  : "http://localhost:4317";
+
 export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
   title: `${SITE.name} · ${SITE.tagline}`,
   description:
     "Tacos, campechanas y costillas de jabalí en Chalco. Hornería artesanal — El Asador de Odin.",
