@@ -14,7 +14,7 @@ export function SiteFooter() {
           </p>
         </div>
         <p className="text-xs text-ash/70">
-          © {new Date().getFullYear()} {SITE.name}. Chalco, Edomex.
+          © 2026 {SITE.name}. Chalco, Edomex.
         </p>
       </div>
     </footer>
