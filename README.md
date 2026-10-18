@@ -26,7 +26,7 @@ Los botones **Pedir** / **WhatsApp** del negocio abren un modal para elegir sucu
 | Sucursal | WhatsApp | Maps |
 | --- | --- | --- |
 | Jardines de Chalco | +52 56 5781 5353 → `525657815353` | [Maps](https://maps.app.goo.gl/c6GkMdtcj3Agv5Uw6?g_st=ic) |
-| Culturas de México | +52 56 1509 8589 → `525615098589` | [Maps](https://maps.app.goo.gl/FFAyYV7NDnnzUwFRA?g_st=ic) |
+| Culturas de México | +52 753 120 6984 → `527531206984` | [Maps](https://maps.app.goo.gl/FFAyYV7NDnnzUwFRA?g_st=ic) |
 
 Config centralizada en `src/lib/config.ts` (`BRANCHES`). El crédito del footer (ArathGGM) usa otro número y **no** pasa por el modal.
 
