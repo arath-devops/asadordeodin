@@ -25,12 +25,22 @@ const PHOTO_VARIANTS: Record<
   },
   cortes: {
     src: "/cortes-asandose.jpg",
-    imageClass: "object-cover object-[center_35%] opacity-70",
+    // Un poco más de brillo + foco en la carne (racks), sin perder mood de horno
+    imageClass:
+      "object-cover object-[center_42%] opacity-90 brightness-110 contrast-105 saturate-110",
     overlays: (
       <>
-        <div className="absolute inset-0 bg-char/55" />
-        <div className="absolute inset-0 bg-gradient-to-t from-char via-char/50 to-char/20" />
-        <div className="absolute inset-0 bg-gradient-to-r from-char/60 via-transparent to-char/30" />
+        {/* Overlay suave: legibilidad en texto/logo, carne visible al centro-derecha */}
+        <div className="absolute inset-0 bg-char/30" />
+        <div className="absolute inset-0 bg-gradient-to-t from-char via-char/55 to-char/15" />
+        <div className="absolute inset-0 bg-gradient-to-r from-char/70 via-char/25 to-transparent" />
+        <div
+          className="absolute inset-0 opacity-35"
+          style={{
+            backgroundImage:
+              "radial-gradient(circle at 65% 40%, rgba(232,93,4,0.22), transparent 42%)",
+          }}
+        />
       </>
     ),
   },

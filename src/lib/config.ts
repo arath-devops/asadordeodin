@@ -40,12 +40,9 @@ export const SITE = {
 } as const;
 
 /**
- * Variante visual del hero (para comparar capturas).
- * - 'atmosphere' → velas actuales (default / en producción por ahora)
- * - 'cortes'     → cortes asándose
- * - 'comida'     → close-up short rib
- * - 'velas'      → atmosphere más clara + glow
- * - 'gradient'   → solo gradiente carbón→fuego
+ * Variante visual del hero.
+ * Confirmado por Arath: 'cortes' (cortes asándose).
+ * Otras: atmosphere | comida | velas | gradient
  */
 export type HeroVariant =
   | "atmosphere"
@@ -54,4 +51,4 @@ export type HeroVariant =
   | "velas"
   | "gradient";
 
-export const HERO_VARIANT: HeroVariant = "atmosphere";
+export const HERO_VARIANT: HeroVariant = "cortes";
