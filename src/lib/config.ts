@@ -38,3 +38,20 @@ export const SITE = {
   subtitle: "Tacos y Costillas",
   heroLine: "Carne, fuego y tradición en Chalco.",
 } as const;
+
+/**
+ * Variante visual del hero (para comparar capturas).
+ * - 'atmosphere' → velas actuales (default / en producción por ahora)
+ * - 'cortes'     → cortes asándose
+ * - 'comida'     → close-up short rib
+ * - 'velas'      → atmosphere más clara + glow
+ * - 'gradient'   → solo gradiente carbón→fuego
+ */
+export type HeroVariant =
+  | "atmosphere"
+  | "cortes"
+  | "comida"
+  | "velas"
+  | "gradient";
+
+export const HERO_VARIANT: HeroVariant = "atmosphere";
