@@ -4,8 +4,8 @@ import {
   WEB_CREDIT_NAME,
   WEB_CREDIT_STYLE,
   webCreditHref,
-  whatsappHref,
 } from "@/lib/config";
+import { OrderWhatsAppButton } from "@/components/order-branch-modal";
 
 export function SiteFooter() {
   return (
@@ -20,12 +20,9 @@ export function SiteFooter() {
             Sabor que honra nuestras raíces · Carne, fuego y tradición
           </p>
           <div className="mt-4 flex flex-wrap gap-4">
-            <a
-              href={whatsappHref()}
-              className="font-display text-xs font-semibold uppercase tracking-[0.16em] text-gold transition-colors hover:text-cream"
-            >
+            <OrderWhatsAppButton className="font-display text-xs font-semibold uppercase tracking-[0.16em] text-gold transition-colors hover:text-cream">
               WhatsApp
-            </a>
+            </OrderWhatsAppButton>
             <a
               href={FACEBOOK_URL}
               target="_blank"

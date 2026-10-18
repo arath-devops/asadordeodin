@@ -11,12 +11,12 @@ export function FireAtmosphere() {
         src="/cortes-asandose.jpg"
         alt="Cortes asándose en el horno artesanal"
         fill
-        className="object-cover object-center animate-flame"
+        className="pointer-events-none object-cover object-center animate-flame"
         sizes="100vw"
         priority={false}
       />
-      <div className="absolute inset-0 bg-gradient-to-t from-char via-char/55 to-char/25" />
-      <div className="absolute inset-0 bg-gradient-to-r from-char/70 via-transparent to-char/40" />
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-char via-char/55 to-char/25" />
+      <div className="pointer-events-none absolute inset-0 bg-gradient-to-r from-char/70 via-transparent to-char/40" />
 
       <div className="relative z-10 mx-auto flex min-h-[55vh] max-w-6xl flex-col items-start justify-end px-4 py-16 md:min-h-[70vh] md:px-6 md:py-24">
         <p className="font-display text-xs font-semibold uppercase tracking-[0.35em] text-gold">

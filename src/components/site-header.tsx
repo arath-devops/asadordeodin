@@ -1,5 +1,6 @@
 import Image from "next/image";
-import { SITE, whatsappHref } from "@/lib/config";
+import { SITE } from "@/lib/config";
+import { OrderWhatsAppButton } from "@/components/order-branch-modal";
 
 const links = [
   { href: "#menu", label: "Menú" },
@@ -9,7 +10,7 @@ const links = [
 
 export function SiteHeader() {
   return (
-    <header className="fixed inset-x-0 top-0 z-40 border-b border-gold/15 bg-char/70 backdrop-blur-md">
+    <header className="fixed inset-x-0 top-0 z-[55] border-b border-gold/15 bg-char/70 backdrop-blur-md">
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3 md:px-6">
         <a href="#inicio" className="flex items-center gap-3">
           <Image
@@ -34,16 +35,13 @@ export function SiteHeader() {
               {link.label}
             </a>
           ))}
-          <a href={whatsappHref()} className="btn-ember !px-3 !py-2 !text-[0.7rem]">
+          <OrderWhatsAppButton className="btn-ember !px-3 !py-2 !text-[0.7rem]">
             WhatsApp
-          </a>
+          </OrderWhatsAppButton>
         </nav>
-        <a
-          href={whatsappHref()}
-          className="btn-ember !inline-flex !px-3 !py-2 !text-[0.7rem] md:!hidden"
-        >
+        <OrderWhatsAppButton className="btn-ember !inline-flex !px-3 !py-2 !text-[0.7rem] md:!hidden">
           Pedir
-        </a>
+        </OrderWhatsAppButton>
       </div>
     </header>
   );

@@ -19,40 +19,33 @@ npm run dev -- --port 4317
 
 Abre [http://127.0.0.1:4317](http://127.0.0.1:4317).
 
-## WhatsApp
+## WhatsApp (por sucursal)
 
-Número real: **+52 56 5781 5353** → `wa.me/525657815353`
+Los botones **Pedir** / **WhatsApp** del negocio abren un modal para elegir sucursal y luego `wa.me/<número>`:
 
-Variable de entorno (local y Vercel):
+| Sucursal | WhatsApp | Maps |
+| --- | --- | --- |
+| Jardines de Chalco | +52 56 5781 5353 → `525657815353` | [Maps](https://maps.app.goo.gl/c6GkMdtcj3Agv5Uw6?g_st=ic) |
+| Culturas de México | +52 56 1509 8589 → `525615098589` | [Maps](https://maps.app.goo.gl/FFAyYV7NDnnzUwFRA?g_st=ic) |
 
-```bash
-NEXT_PUBLIC_WHATSAPP_NUMBER=525657815353
-```
-
-También documentada en `.env.example`. Fallback en `src/lib/config.ts`.
+Config centralizada en `src/lib/config.ts` (`BRANCHES`). El crédito del footer (ArathGGM) usa otro número y **no** pasa por el modal.
 
 ## Publicar en Vercel (Hobby gratis)
 
-1. Crear un **repo GitHub real** (este Project empezó como repo temporal).
-2. Crear cuenta en [vercel.com](https://vercel.com) (login con GitHub).
-3. **Add New Project** → importar el repo → Framework: Next.js (auto).
-4. En **Environment Variables** añadir:
-   - `NEXT_PUBLIC_WHATSAPP_NUMBER` = `525657815353`
-5. Deploy → URL pública `*.vercel.app`.
-
-Pasos detallados y blockers: ver contexto del Project en `docs/publicacion.md`.
+1. Crear cuenta en [vercel.com](https://vercel.com) (login con GitHub).
+2. **Add New Project** → importar [arath-devops/asadordeodin](https://github.com/arath-devops/asadordeodin) → Framework: Next.js (auto).
+3. Deploy → URL pública `*.vercel.app`.
 
 Verificación local de producción:
 
 ```bash
 npm run build
-npm run start -- --port 4317
+npm run start -- --hostname 0.0.0.0 --port 4317
 ```
 
 ## Sucursales
 
-- **Jardines de Chalco** — [Maps](https://maps.app.goo.gl/c6GkMdtcj3Agv5Uw6?g_st=ic) (embed con coords del short link)
-- **Culturas de México** — próximamente (dirección pendiente)
+Ambas activas con mapa embebido + “Cómo llegar” al short link de Google Maps (datos en `BRANCHES`).
 
 ## Facebook
 

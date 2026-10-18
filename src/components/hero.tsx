@@ -1,6 +1,7 @@
 import Image from "next/image";
 import type { ReactNode } from "react";
-import { HERO_VARIANT, SITE, whatsappHref, type HeroVariant } from "@/lib/config";
+import { HERO_VARIANT, SITE, type HeroVariant } from "@/lib/config";
+import { OrderWhatsAppButton } from "@/components/order-branch-modal";
 
 const PHOTO_VARIANTS: Record<
   Exclude<HeroVariant, "gradient">,
@@ -78,7 +79,7 @@ const PHOTO_VARIANTS: Record<
 function HeroBackdrop({ variant }: { variant: HeroVariant }) {
   if (variant === "gradient") {
     return (
-      <div className="absolute inset-0">
+      <div className="pointer-events-none absolute inset-0">
         <div
           className="absolute inset-0"
           style={{
@@ -107,16 +108,16 @@ function HeroBackdrop({ variant }: { variant: HeroVariant }) {
 
   const photo = PHOTO_VARIANTS[variant];
   return (
-    <div className="absolute inset-0">
+    <div className="pointer-events-none absolute inset-0">
       <Image
         src={photo.src}
         alt=""
         fill
         priority
-        className={photo.imageClass}
+        className={`pointer-events-none ${photo.imageClass}`}
         sizes="100vw"
       />
-      {photo.overlays}
+      <div className="pointer-events-none absolute inset-0">{photo.overlays}</div>
     </div>
   );
 }
@@ -158,9 +159,9 @@ export function Hero() {
             {SITE.heroLine}
           </p>
           <div className="animate-rise-delay-3 flex flex-wrap gap-3">
-            <a href={whatsappHref()} className="btn-ember">
+            <OrderWhatsAppButton className="btn-ember">
               Pedir por WhatsApp
-            </a>
+            </OrderWhatsAppButton>
             <a href="#menu" className="btn-ghost">
               Ver menú
             </a>

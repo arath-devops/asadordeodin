@@ -3,13 +3,14 @@ import { FireAtmosphere } from "@/components/fire-atmosphere";
 import { Hero } from "@/components/hero";
 import { Locations } from "@/components/locations";
 import { MenuSection } from "@/components/menu-section";
+import { OrderBranchProvider } from "@/components/order-branch-modal";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { WhatsappFab } from "@/components/whatsapp-fab";
 
 export default function Home() {
   return (
-    <>
+    <OrderBranchProvider>
       <SiteHeader />
       <main className="flex-1">
         <Hero />
@@ -20,6 +21,6 @@ export default function Home() {
       </main>
       <SiteFooter />
       <WhatsappFab />
-    </>
+    </OrderBranchProvider>
   );
 }

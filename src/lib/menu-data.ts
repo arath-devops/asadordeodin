@@ -114,33 +114,4 @@ export const MENU_SECTIONS: MenuSection[] = [
   },
 ];
 
-export type Location = {
-  id: string;
-  name: string;
-  area: string;
-  status: "open" | "coming_soon";
-  note?: string;
-  /** CTA “Cómo llegar” — preferir short link oficial del cliente */
-  mapsUrl?: string;
-  mapEmbed?: string;
-};
-
-/** Coords resueltas desde maps.app.goo.gl/c6GkMdtcj3Agv5Uw6 → 19.2638955,-98.9109981 */
-export const LOCATIONS: Location[] = [
-  {
-    id: "jardines",
-    name: "Jardines de Chalco",
-    area: "Chalco, Estado de México",
-    status: "open",
-    mapsUrl: "https://maps.app.goo.gl/c6GkMdtcj3Agv5Uw6?g_st=ic",
-    mapEmbed:
-      "https://maps.google.com/maps?q=19.2638955,-98.9109981&z=16&output=embed",
-  },
-  {
-    id: "culturas",
-    name: "Culturas de México",
-    area: "Chalco, Estado de México",
-    status: "coming_soon",
-    note: "Dirección exacta pendiente. Pronto publicaremos la ubicación.",
-  },
-];
+/** Sucursales viven en `src/lib/config.ts` → BRANCHES. */

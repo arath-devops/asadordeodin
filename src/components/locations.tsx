@@ -1,4 +1,5 @@
-import { LOCATIONS } from "@/lib/menu-data";
+import { BRANCHES, branchMapEmbed, branchWhatsappHref } from "@/lib/config";
+import { OrderWhatsAppButton } from "@/components/order-branch-modal";
 
 export function Locations() {
   return (
@@ -13,74 +14,64 @@ export function Locations() {
             Sucursales
           </h2>
           <p className="mt-4 text-lg text-ash">
-            Visítanos en Jardines de Chalco. Culturas de México abre pronto.
+            Dos puntos para encontrar el fuego: Jardines de Chalco y Culturas de
+            México.
           </p>
         </div>
 
         <div className="grid gap-8 md:grid-cols-2">
-          {LOCATIONS.map((location) => {
-            const isOpen = location.status === "open";
-            return (
-              <article
-                key={location.id}
-                className="overflow-hidden rounded-sm border border-gold/20 bg-char-elevated/80"
-              >
-                <div className="border-b border-gold/15 px-5 py-5">
-                  <h3 className="font-display text-xl font-bold text-gold-soft md:text-2xl">
-                    {location.name}
-                  </h3>
-                  <p className="mt-1 text-ash">{location.area}</p>
-                  {isOpen ? null : (
-                    <p className="mt-3 inline-flex rounded-sm border border-ember/30 bg-ember/10 px-2.5 py-1 text-xs font-medium text-ember-bright">
-                      Próximamente · {location.note}
-                    </p>
-                  )}
-                </div>
+          {BRANCHES.map((branch) => (
+            <article
+              key={branch.id}
+              className="overflow-hidden rounded-sm border border-gold/20 bg-char-elevated/80"
+            >
+              <div className="border-b border-gold/15 px-5 py-5">
+                <h3 className="font-display text-xl font-bold text-gold-soft md:text-2xl">
+                  {branch.name}
+                </h3>
+                <p className="mt-1 text-ash">{branch.area}</p>
+                <p className="mt-2 text-sm text-gold/90">
+                  WhatsApp {branch.whatsappDisplay}
+                </p>
+              </div>
 
-                {isOpen && location.mapEmbed ? (
-                  <div className="relative aspect-[16/11] bg-smoke">
-                    <iframe
-                      title={`Mapa — ${location.name}`}
-                      src={location.mapEmbed}
-                      className="absolute inset-0 h-full w-full border-0 grayscale-[20%] contrast-110"
-                      loading="lazy"
-                      referrerPolicy="no-referrer-when-downgrade"
-                      allowFullScreen
-                    />
-                  </div>
-                ) : (
-                  <div className="relative flex aspect-[16/11] items-center justify-center bg-smoke/80 px-6 text-center">
-                    <div>
-                      <p className="font-display text-lg font-semibold uppercase tracking-[0.2em] text-gold">
-                        Próximamente
-                      </p>
-                      <p className="mt-3 max-w-xs text-sm text-ash">
-                        {location.note ??
-                          "Ubicación en preparación. Sin dirección publicada aún."}
-                      </p>
-                    </div>
-                  </div>
-                )}
+              <div className="relative aspect-[16/11] bg-smoke">
+                <iframe
+                  title={`Mapa — ${branch.name}`}
+                  src={branchMapEmbed(branch)}
+                  className="absolute inset-0 h-full w-full border-0 grayscale-[20%] contrast-110"
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  allowFullScreen
+                />
+              </div>
 
-                <div className="px-5 py-4">
-                  {isOpen && location.mapsUrl ? (
-                    <a
-                      href={location.mapsUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="font-display text-xs font-semibold uppercase tracking-[0.16em] text-gold transition-colors hover:text-cream"
-                    >
-                      Cómo llegar →
-                    </a>
-                  ) : (
-                    <span className="font-display text-xs font-semibold uppercase tracking-[0.16em] text-ash/60">
-                      Mapa disponible pronto
-                    </span>
-                  )}
-                </div>
-              </article>
-            );
-          })}
+              <div className="flex flex-wrap items-center gap-4 px-5 py-4">
+                <a
+                  href={branch.mapsUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-display text-xs font-semibold uppercase tracking-[0.16em] text-gold transition-colors hover:text-cream"
+                >
+                  Cómo llegar →
+                </a>
+                <a
+                  href={branchWhatsappHref(branch)}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-display text-xs font-semibold uppercase tracking-[0.16em] text-ember-bright transition-colors hover:text-cream"
+                >
+                  Pedir en esta sucursal →
+                </a>
+              </div>
+            </article>
+          ))}
+        </div>
+
+        <div className="mt-10">
+          <OrderWhatsAppButton className="btn-ember">
+            Pedir por WhatsApp
+          </OrderWhatsAppButton>
         </div>
       </div>
     </section>

@@ -1,8 +1,5 @@
-import {
-  FACEBOOK_URL,
-  WHATSAPP_DISPLAY,
-  whatsappHref,
-} from "@/lib/config";
+import { FACEBOOK_URL, BRANCHES } from "@/lib/config";
+import { OrderWhatsAppButton } from "@/components/order-branch-modal";
 
 export function Contact() {
   return (
@@ -22,22 +19,22 @@ export function Contact() {
               Ordena por WhatsApp
             </h2>
             <p className="mt-4 text-lg text-ash">
-              Escríbenos para pedir, preguntar por el sabor del día o confirmar
-              tu sucursal más cercana. Respuesta directa del asador.
+              Elige tu sucursal más cercana y escríbenos para pedir o preguntar
+              por el sabor del día.
             </p>
             <div className="mt-8 flex flex-wrap items-center gap-4">
-              <a href={whatsappHref()} className="btn-ember animate-ember-pulse">
+              <OrderWhatsAppButton className="btn-ember animate-ember-pulse">
                 Abrir WhatsApp
-              </a>
-              <p className="text-sm text-ash">
-                <a
-                  href={whatsappHref()}
-                  className="font-medium text-gold-soft transition-colors hover:text-cream"
-                >
-                  {WHATSAPP_DISPLAY}
-                </a>
-              </p>
+              </OrderWhatsAppButton>
             </div>
+            <ul className="mt-6 space-y-1 text-sm text-ash">
+              {BRANCHES.map((b) => (
+                <li key={b.id}>
+                  <span className="text-gold-soft">{b.name}:</span>{" "}
+                  {b.whatsappDisplay}
+                </li>
+              ))}
+            </ul>
             <p className="mt-6 text-sm text-ash">
               También en{" "}
               <a
