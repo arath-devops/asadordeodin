@@ -5,7 +5,7 @@ export function WhatsappFab() {
     <a
       href={whatsappHref()}
       aria-label="Pedir por WhatsApp"
-      className="animate-ember-pulse fixed bottom-5 right-5 z-50 flex size-14 items-center justify-center rounded-full bg-[#25D366] text-[#052e16] shadow-lg shadow-black/40 transition-transform hover:scale-105 md:bottom-8 md:right-8"
+      className="animate-ember-pulse fixed bottom-24 right-5 z-50 flex size-14 items-center justify-center rounded-full bg-[#25D366] text-[#052e16] shadow-lg shadow-black/40 transition-transform hover:scale-105 md:bottom-28 md:right-8"
     >
       <svg
         viewBox="0 0 24 24"

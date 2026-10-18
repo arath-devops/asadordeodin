@@ -24,7 +24,7 @@ export const WEB_CREDIT_PREFILL = "Hola, quiero cotizar una página web";
  * Estilo del crédito en el footer:
  * - 'discreet' → “Sitio por ArathGGM” (solo el nombre es link)
  * - 'soft'     → “¿Quieres una página así? Cotiza con ArathGGM”
- * Temporalmente dejamos 'soft' (versión B) para que Arath compare.
+ * Confirmado por Arath: venta suave ('soft').
  */
 export const WEB_CREDIT_STYLE: "soft" | "discreet" = "soft";
 

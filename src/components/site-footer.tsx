@@ -37,7 +37,7 @@ export function SiteFooter() {
             </a>
           </div>
         </div>
-        <div className="space-y-1.5 text-xs text-ash/70 md:text-right">
+        <div className="max-w-[min(100%,20rem)] space-y-1.5 pr-16 text-xs text-ash/70 md:max-w-none md:pr-20 md:text-right">
           <p>© 2026 {SITE.name}. Chalco, Edomex.</p>
           <WebCredit />
         </div>
