@@ -40,7 +40,7 @@ export function SiteHeader() {
         </nav>
         <a
           href={whatsappHref()}
-          className="btn-ember !px-3 !py-2 !text-[0.7rem] md:hidden"
+          className="btn-ember !inline-flex !px-3 !py-2 !text-[0.7rem] md:!hidden"
         >
           Pedir
         </a>

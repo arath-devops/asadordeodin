@@ -97,23 +97,33 @@ export const MENU_SECTIONS: MenuSection[] = [
   },
 ];
 
-export const LOCATIONS = [
+export type Location = {
+  id: string;
+  name: string;
+  area: string;
+  status: "open" | "coming_soon";
+  note?: string;
+  /** CTA “Cómo llegar” — preferir short link oficial del cliente */
+  mapsUrl?: string;
+  mapEmbed?: string;
+};
+
+/** Coords resueltas desde maps.app.goo.gl/c6GkMdtcj3Agv5Uw6 → 19.2638955,-98.9109981 */
+export const LOCATIONS: Location[] = [
   {
     id: "jardines",
     name: "Jardines de Chalco",
     area: "Chalco, Estado de México",
-    note: "Ubicación aproximada — dirección exacta pendiente.",
-    mapQuery: "Jardines de Chalco, Chalco, Estado de México",
+    status: "open",
+    mapsUrl: "https://maps.app.goo.gl/c6GkMdtcj3Agv5Uw6?g_st=ic",
     mapEmbed:
-      "https://maps.google.com/maps?q=Jardines%20de%20Chalco%2C%20Chalco%2C%20Estado%20de%20M%C3%A9xico&z=15&output=embed",
+      "https://maps.google.com/maps?q=19.2638955,-98.9109981&z=16&output=embed",
   },
   {
     id: "culturas",
     name: "Culturas de México",
     area: "Chalco, Estado de México",
-    note: "Ubicación aproximada — dirección exacta pendiente.",
-    mapQuery: "Culturas de México, Chalco, Estado de México",
-    mapEmbed:
-      "https://maps.google.com/maps?q=Culturas%20de%20M%C3%A9xico%2C%20Chalco%2C%20Estado%20de%20M%C3%A9xico&z=15&output=embed",
+    status: "coming_soon",
+    note: "Dirección exacta pendiente. Pronto publicaremos la ubicación.",
   },
-] as const;
+];

@@ -1,4 +1,8 @@
-import { WHATSAPP_NUMBER, whatsappHref } from "@/lib/config";
+import {
+  FACEBOOK_URL,
+  WHATSAPP_DISPLAY,
+  whatsappHref,
+} from "@/lib/config";
 
 export function Contact() {
   return (
@@ -26,18 +30,25 @@ export function Contact() {
                 Abrir WhatsApp
               </a>
               <p className="text-sm text-ash">
-                Número placeholder:{" "}
-                <code className="rounded-sm bg-char px-1.5 py-0.5 text-gold-soft">
-                  {WHATSAPP_NUMBER}
-                </code>
+                <a
+                  href={whatsappHref()}
+                  className="font-medium text-gold-soft transition-colors hover:text-cream"
+                >
+                  {WHATSAPP_DISPLAY}
+                </a>
               </p>
             </div>
-            <p className="mt-6 text-sm text-ash/80">
-              Configura{" "}
-              <code className="text-gold-soft">NEXT_PUBLIC_WHATSAPP_NUMBER</code>{" "}
-              o edita{" "}
-              <code className="text-gold-soft">src/lib/config.ts</code> cuando
-              tengas el número real.
+            <p className="mt-6 text-sm text-ash">
+              También en{" "}
+              <a
+                href={FACEBOOK_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="font-medium text-gold-soft underline decoration-gold/40 underline-offset-4 transition-colors hover:text-cream"
+              >
+                Facebook
+              </a>
+              .
             </p>
           </div>
         </div>

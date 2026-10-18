@@ -21,27 +21,18 @@ Abre [http://127.0.0.1:4317](http://127.0.0.1:4317).
 
 ## WhatsApp
 
-El número es configurable:
+Número real: **+52 56 5781 5353** → `wa.me/525657815353`
 
-1. Variable de entorno `NEXT_PUBLIC_WHATSAPP_NUMBER` (recomendado), o
-2. Constante en `src/lib/config.ts`
-
-Formato: `52` + 10 dígitos (sin espacios). Placeholder actual: `52XXXXXXXXXX`.
-
-Ejemplo:
-
-```bash
-NEXT_PUBLIC_WHATSAPP_NUMBER=5215512345678 npm run dev -- --port 4317
-```
+Configurable con `NEXT_PUBLIC_WHATSAPP_NUMBER` o en `src/lib/config.ts`.
 
 ## Sucursales
 
-Los embeds de Maps usan búsquedas públicas aproximadas:
+- **Jardines de Chalco** — [Maps](https://maps.app.goo.gl/c6GkMdtcj3Agv5Uw6?g_st=ic) (embed con coords del short link)
+- **Culturas de México** — próximamente (dirección pendiente)
 
-- Jardines de Chalco, Chalco, Edomex
-- Culturas de México, Chalco, Edomex
+## Facebook
 
-Sustituir por direcciones exactas cuando estén disponibles (`src/lib/menu-data.ts`).
+https://www.facebook.com/share/196A7LuKUe/?mibextid=wwXIfr
 
 ## Scripts
 
