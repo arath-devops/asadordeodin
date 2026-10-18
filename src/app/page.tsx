@@ -1,4 +1,5 @@
 import { Contact } from "@/components/contact";
+import { FireAtmosphere } from "@/components/fire-atmosphere";
 import { Hero } from "@/components/hero";
 import { Locations } from "@/components/locations";
 import { MenuSection } from "@/components/menu-section";
@@ -13,6 +14,7 @@ export default function Home() {
       <main className="flex-1">
         <Hero />
         <MenuSection />
+        <FireAtmosphere />
         <Locations />
         <Contact />
       </main>

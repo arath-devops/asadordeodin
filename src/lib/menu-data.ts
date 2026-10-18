@@ -39,6 +39,23 @@ export const MENU_SECTIONS: MenuSection[] = [
     notes: ["Con queso: $25", "Aguja norteña: +$25"],
   },
   {
+    id: "especiales",
+    title: "Tacos especiales",
+    subtitle: "Cortes al fuego, aparte del taco de $20",
+    priceBadge: "Especial",
+    image: {
+      src: "/taco-short-rib.jpg",
+      alt: "Short rib asado al horno artesanal",
+    },
+    items: [
+      {
+        name: "Short Rib",
+        detail: "Taco especial de short rib · hornería artesanal",
+        price: "$25",
+      },
+    ],
+  },
+  {
     id: "campechanas",
     title: "Campechanas",
     subtitle: "Grandes tortillas de harina y queso",

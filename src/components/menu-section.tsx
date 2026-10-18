@@ -13,8 +13,9 @@ export function MenuSection() {
             Menú
           </h2>
           <p className="mt-4 text-lg text-ash">
-            Del carbón a la mesa: tacos, campechanas y costillas de jabalí con el
-            sello de nuestra hornería artesanal.
+            Del carbón a la mesa: tacos de vianda, el especial Short Rib,
+            campechanas y costillas de jabalí con el sello de nuestra hornería
+            artesanal.
           </p>
           <div className="gold-rule mt-8 max-w-xs" />
         </div>
